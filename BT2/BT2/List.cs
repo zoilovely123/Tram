@@ -17,11 +17,37 @@ namespace BT2
         }
         public List()
         {
+            this.head = null;
+            this.tail = null;
         }
         public void addfirst(Element<T> e)
         {
             e.Next = head;
             this.head = e;
         }
+        public void addtail(Element<T> e)
+        {
+            if (tail == null) head = tail = e;
+            else
+            {
+                tail.Next = e;
+                this.tail = e;
+            }
+        }
+        public void PrintList()
+        {
+            Element<T> point = head;
+            while (point != null)
+            {
+                Console.Write(point.Data);
+                point = point.Next;
+            }
+        }
+
+
+
+
+
+        public Element<T> tail { get; set; }
     }
 }
